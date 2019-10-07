@@ -141,3 +141,28 @@ v.call()
 iv = Invertebrate()
 iv.call()
 ```
+
+# Intro to Python III w/ Beej
+
+Spec: Write a program that holds product and department information about a store. User should be able to enter a department number and get a list of products in that department.
+
+Questions: 
+
+- What kind of product info?
+- Other info?
+- Department info
+- How many products?
+- How to present data
+- How many customers?
+- What is the type of the info
+- Vendor accounts?
+- Can departments change?
+- Can a product be in more than one department?
+- Which departments hold what?
+- How is information added?
+- Product location?
+- Sale information?
+- List of products?
+- Quantity of products?
+
+
