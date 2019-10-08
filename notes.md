@@ -1,32 +1,5 @@
 # Intro to Python IV w/ Beej Jorgensen
 
-## Spec: write a program that holds product and department information about a store. User should be able to enter a department number and get a list of products in that department
-
-### Product info is
-
-    * quantity, iny
-    * price
-    * dept
-    *name, string
-
-You'll get product list later.
-
-### Department info
-
-    *number, int
-    *name, string
-
-### Questions
-
-* How many products?
-Under 1,000,000
-
-* How to present data
-Standard output
-
-* How many customers?
-Under 100 requests per second.
-
 ```python
 class TodoList:
     def __init__(self, name):
@@ -144,25 +117,56 @@ iv.call()
 
 # Intro to Python III w/ Beej
 
-Spec: Write a program that holds product and department information about a store. User should be able to enter a department number and get a list of products in that department.
+**Spec: Write a program that holds product and department information about a store. User should be able to enter a department number and get a list of products in that department.**
 
-Questions: 
+Product info is:
+
+- Quantity, int
+- price
+- dept
+- name, string
+
+You'll get a product list later.
+
+Department info:
+
+- name, string
+
+Questions:
 
 - What kind of product info?
 - Other info?
 - Department info
 - How many products?
+  - under 1,000,000
 - How to present data
+  - Standard output
 - How many customers?
+  - under 100 requests per second.
 - What is the type of the info
 - Vendor accounts?
+  - No.
 - Can departments change?
+  - No.
 - Can a product be in more than one department?
+  - Yes.
 - Which departments hold what?
+  - TBD
 - How is information added?
+  - Out of scope
 - Product location?
+  - No.
 - Sale information?
-- List of products?
-- Quantity of products?
+  - No
+  
+## Notes on classes
 
+>The instantiation operation (“calling” a class object) creates an empty object. Many classes like to create objects with instances customized to a specific initial state. Therefore a class may define a special method named __init__().
 
+## Creating the application
+
+- Create an object oriented typing solution
+- Look through the specification for the nouns, which becomes the classes 
+  - Which will eventually be turned into objects
+- Look for verbs in spec, which tends to be methods in the object
+  - which are methods in the class
