@@ -15,7 +15,7 @@ class Room:
         self.w_to = w_to
     
     def __str__(self):
-        return { 'name': self.name, 'description': self.description }
+        return f'name: {self.name}, description: {self.description}'
 
     def room_items(self):
         if len(self.items) == 0:
