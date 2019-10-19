@@ -15,11 +15,15 @@ class Room:
         self.w_to = w_to
     
     def __str__(self):
-        return {'name': self.name, 'description': self.description, 'items': self.items}
+        return { 'name': self.name, 'description': self.description }
 
-
-        Room('Kitchen', 'You make food here', Item('candle', 'it lights up shit'))
-
-
-class Item:
-    def
+    def room_items(self):
+        if len(self.items) == 0:
+            print('There are no items here.')
+        else:
+            check = input(f'There seems to be a few item(s) lying around in the {self.name}. Would you like to check them? /n Yes(y), No(n)')
+            if check == 'y':
+                for item, description in self.items:
+                    print(f'You found a(n) {item}: {description}.') 
+            else: 
+                print('You ignore the items in the room.')
