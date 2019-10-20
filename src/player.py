@@ -2,13 +2,13 @@
 # currently.
 
 class Player:
-    def __init__(self, name, current_room, items=None):
+    def __init__(self, name, current_room):
         self.name = name
         self.current_room = current_room
-        self.inventory = Inventory(items)
+        self.inventory = Inventory()
 
     def __str__(self):
-        return f'Player name: {self.name}, Current_room: {self.current_room}, Items: {self.items}'
+        return f'Player name: {self.name}, Current_room: {self.current_room}'
     
     def actions(self, action):
         if action == 'n':
@@ -28,20 +28,23 @@ class Player:
         elif action == 'f':
             if self.current_room.items:
                 self.current_room.room_items()
-                item = input('What would you like to pick up?')
+                item = input('What would you like to pick up?\n')
                 if self.current_room.items[item]:
                     self.inventory.add_to_inventory(item, self.current_room.items[item].pop())
                 else:
-                    print(f'Are you sure there is a(n) {item} here? \n You should check the room again.')
+                    print(f'Are you sure there is a(n) {item} here? \n You should check the room again.\n')
             else: 
-                print('There are no items in this room.')
+                print('There are no items in this room.\n')
+        elif action != 'n' or action != 's' or action != 'e' or action != 'w' or action != 'i' or action != 'f' or action !='q':
+            print('Invalid action.\n')
+        elif action == 'q':
+            print('Goodbye.')
+        else:
+            print('You cannot go there.\n\n')
                
-            
-            
-
 class Inventory:
-    def __init__(self, items):
-        self.items = items
+    def __init__(self):
+        self.items = {}
     
     def show_inventory(self):
         if self.items is not None:
