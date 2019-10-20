@@ -29,8 +29,8 @@ class Room:
                 print('You ignore the items in the room.')
 
 
-dungeon = Room('Dungeon', 'Damp, cobblestoned walls surround you as you enter, within the depths of this structure you see metal cages and shackles. You hear eerie groans in the distance.', items={'keys': 'A ring of keys you found on a hook attached to the ebony walls of the dungeon.', 'whip': 'A leather whip you found on a metal desk of the dungeon.'})
+# dungeon = Room('Dungeon', 'Damp, cobblestoned walls surround you as you enter, within the depths of this structure you see metal cages and shackles. You hear eerie groans in the distance.', items={'keys': 'A ring of keys you found on a hook attached to the ebony walls of the dungeon.', 'whip': 'A leather whip you found on a metal desk of the dungeon.'})
 
-standard_input = 'y'
+# standard_input = 'y'
 
-print(dungeon.room_items())
+# print(dungeon.room_items())
