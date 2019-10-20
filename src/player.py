@@ -14,21 +14,25 @@ class Player:
         if action == 'n':
             if self.current_room.n_to is not None:
                 self.current_room = self.current_room.n_to
+                print('You go north.\n')
             else:
                 print('Nothing is towards the north.')
         elif action == 's':
             if self.current_room.s_to is not None:
                 self.current_room = self.current_room.s_to
+                print('You go south.\n')
             else:
                 print('Nothing is south.')
         elif action == 'e':
             if self.current_room.e_to is not None:
                 self.current_room = self.current_room.e_to
+                print('You go east.\n')
             else:
                 print('Nothing is east.')
         elif action == 'w':
             if self.current_room.w_to is not None:
                 self.current_room = self.current_room.w_to
+                print('You go west.\n')
             else:
                 print('Nothing is west.')
         elif action == 'i':
