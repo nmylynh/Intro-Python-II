@@ -27,6 +27,10 @@ class Room:
                     print(f'{item}: {description}') 
             else: 
                 print('You ignore the items in the room.')
+    
+    def add_item(self, item, description):
+        self.items[item] = description
+        print(f'You have dropped a(n) {item}')
 
 
 # dungeon = Room('Dungeon', 'Damp, cobblestoned walls surround you as you enter, within the depths of this structure you see metal cages and shackles. You hear eerie groans in the distance.', items={'keys': 'A ring of keys you found on a hook attached to the ebony walls of the dungeon.', 'whip': 'A leather whip you found on a metal desk of the dungeon.'})
