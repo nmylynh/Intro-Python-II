@@ -39,12 +39,17 @@ class Player:
             if inv_action == 'v':
                 self.inventory.show_inventory()
             elif inv_action == 'd':
-                item = input('What do you want to drop?')
-                item_check = self.inventory.items.get(item)
-                if item_check:
-                    self.current_room.add_item(item, self.inventory.items.pop(item))
+                if self.inventory.items:
+                    item = input('What do you want to drop?\n')
+                    item_check = self.inventory.items.get(item)
+                    if item_check:
+                        self.current_room.add_item(item, self.inventory.items.pop(item))
+                    else:
+                        print(f'You do not seem to have a(n) {item}.\n')
                 else:
-                    print(f'You do not seem to have a(n) {item}.')
+                    print('You do not seem to have any items.\n')
+            else:
+                print('Invalid action.') 
         elif action == 'f':
             if self.current_room.items:
                 self.current_room.room_items()
@@ -68,16 +73,6 @@ class Inventory:
         else: 
             self.items = items
 
-    def inventory_options(self):
-        action = input('What do you want to do?\n\n View inventory(v)\n Drop item(d)\n')
-
-        if action == 'v':
-            self.show_inventory()
-        elif action == 'd':
-            self.drop_item()
-        else:
-            print('Invalid action.')
-    
     def show_inventory(self):
         if self.items is not None:
             print(f'There are {len(self.items)} item(s) in your inventory.\n')
@@ -89,9 +84,6 @@ class Inventory:
     def add_to_inventory(self, item, description):
         self.items[item] = description
         print(f'You pick up a(n) {item}.')
-
-    def drop_item(self):
-        item = input('What would you like to drop?')
         
 
 
