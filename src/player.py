@@ -2,7 +2,7 @@
 # currently.
 
 class Player:
-    def __init__(self, name, current_room, items):
+    def __init__(self, name, current_room, items=None):
         self.name = name
         self.current_room = current_room
         self.inventory = Inventory(items)
@@ -25,6 +25,18 @@ class Player:
                 self.current_room = self.current_room.w_to
         elif action == 'i':
             self.inventory.show_inventory()
+        elif action == 'f':
+            if self.current_room.items:
+                self.current_room.room_items()
+                item = input('What would you like to pick up?')
+                if self.current_room.items[item]:
+                    self.inventory.add_to_inventory(item, self.current_room.items[item].pop())
+                else:
+                    print(f'Are you sure there is a(n) {item} here? \n You should check the room again.')
+            else: 
+                print('There are no items in this room.')
+               
+            
             
 
 class Inventory:
@@ -38,16 +50,19 @@ class Inventory:
                 print(f'{name}: {description}')
         else:
             print('There are no items in your inventory.')
+    
+    def add_to_inventory(self, item, description):
+        self.items[item] = description
         
 
 
-user = Player('Jim', 'Foyer',  items={'candle': 'it lights up stuff', 'sword': 'it chops up stuff'})
+# user = Player('Jim', 'Foyer',  items={'candle': 'it lights up stuff', 'sword': 'it chops up stuff'})
 # print(user.items)
 
 # print(user)
 
 
-print(user.inventory.show_inventory())
+# print(user.inventory.show_inventory())
 
 
 
