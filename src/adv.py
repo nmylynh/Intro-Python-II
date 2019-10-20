@@ -56,7 +56,7 @@ player = Player(input("Please enter your character name: "), room['outside'])
 
 print(f'Your current location is the {player.current_room.name} room. {player.current_room.description}.\n')
 
-action = input("What would you like to do? \n Move: North(n), South(s), East(e), or West(w) \n View Inventory(i) \n Search for items(f) \n Quit Game(q)\n\n")
+action = input("What would you like to do? \n Move: North(n), South(s), East(e), or West(w) \n Open Inventory(i) \n Search for items(f) \n Quit Game(q)\n\n")
 
 player.actions(action)
 
