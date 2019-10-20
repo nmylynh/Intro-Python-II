@@ -4,7 +4,7 @@ from player import Player
 
 room = {
     'outside':  Room("Outside Cave Entrance",
-                     "North of you, the cave mount beckons", items={'torch': 'A torch is convieniently placed on the entrance of the cave.'}),
+                     "North of you, the cave mount beckons", items={'torch': 'Found convieniently placed on the entrance of the cave.'}),
 
     'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty
 passages run north and east.""", items={'journal': 'It is found in a rusty desk in the foyer. It seems to be the journal of someone who used to mine here.'}),
