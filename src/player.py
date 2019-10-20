@@ -24,17 +24,17 @@ class Player:
             if self.current_room.w_to is not None:
                 self.current_room = self.current_room.w_to
         elif action == 'i':
-            Inventory.show_inventory(self)
+            user_inventory.show_inventory()
             
 
 class Inventory(Player):
     def __init__(self, items):
-        super().__init__(items)
+        self.items = items
     
     def show_inventory(self):
         if self.items is not None:
-            print(f'There are {len(self.items)} in your inventory.\n')
-            for name, description in self.items:
+            print(f'There are {len(self.items)} item(s) in your inventory.\n')
+            for name, description in self.items.items():
                 print(f'{name}: {description}')
         else:
             print('There are no items in your inventory.')
@@ -42,10 +42,10 @@ class Inventory(Player):
 
 
 user = Player('Jim', 'Foyer',  items={'candle': 'it lights up stuff', 'sword': 'it chops up stuff'})
-print(user.items)
+# print(user.items)
 
-print(user)
-user_inventory = Inventory(items=user.items)
+# print(user)
+user_inventory = Inventory(user.items)
 
 print(user_inventory.show_inventory())
 
