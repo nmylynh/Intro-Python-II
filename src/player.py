@@ -40,8 +40,9 @@ class Player:
         elif action == 'f':
             if self.current_room.items:
                 self.current_room.room_items()
-                item = input('What would you like to pick up?\n')
-                if self.current_room.items[item]:
+                item = input('Which item would you like to pick up? (Type the item name)\n')
+                item_check = self.current_room.items.get(item)
+                if item_check:
                     self.inventory.add_to_inventory(item, self.current_room.items.pop(item))
                 else:
                     print(f'Are you sure there is a(n) {item} here? \n You should check the room again.\n')
