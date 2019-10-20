@@ -21,7 +21,7 @@ class Room:
         if len(self.items) == 0:
             print('There are no items here.')
         else:
-            check = input(f'There seems to be a few item(s) lying around in the {self.name}. Would you like to check them? \n Yes(y), No(n)')
+            check = input(f'There seems to be a few item(s) lying around in the {self.name}. Would you like to examine them? \n Yes(y), No(n)')
             if check == 'y':
                 for item, description in self.items.items():
                     print(f'{item}: {description}') 
