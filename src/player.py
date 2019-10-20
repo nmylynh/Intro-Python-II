@@ -1,6 +1,5 @@
 # Write a class to hold player information, e.g. what room they are in
 # currently.
-
 class Player:
     def __init__(self, name, current_room, items=None):
         self.name = name
@@ -36,7 +35,16 @@ class Player:
             else:
                 print('Nothing is west.')
         elif action == 'i':
-            self.inventory.show_inventory()
+            inv_action = input('What do you want to do?\n\n View inventory(v)\n Drop item(d)\n')  
+            if inv_action == 'v':
+                self.inventory.show_inventory()
+            elif inv_action == 'd':
+                item = input('What do you want to drop?')
+                item_check = self.inventory.items.get(item)
+                if item_check:
+                    self.current_room.add_item(item, self.inventory.items.pop(item))
+                else:
+                    print(f'You do not seem to have a(n) {item}.')
         elif action == 'f':
             if self.current_room.items:
                 self.current_room.room_items()
@@ -59,6 +67,16 @@ class Inventory:
             self.items = {}
         else: 
             self.items = items
+
+    def inventory_options(self):
+        action = input('What do you want to do?\n\n View inventory(v)\n Drop item(d)\n')
+
+        if action == 'v':
+            self.show_inventory()
+        elif action == 'd':
+            self.drop_item()
+        else:
+            print('Invalid action.')
     
     def show_inventory(self):
         if self.items is not None:
@@ -71,6 +89,10 @@ class Inventory:
     def add_to_inventory(self, item, description):
         self.items[item] = description
         print(f'You pick up a(n) {item}.')
+
+    def drop_item(self):
+        item = input('What would you like to drop?')
+        
 
 
 # user = Player('Jim', 'Foyer', )
