@@ -5,7 +5,7 @@ class Player:
     def __init__(self, name, current_room, items):
         self.name = name
         self.current_room = current_room
-        self.items = items
+        self.inventory = Inventory(items)
 
     def __str__(self):
         return f'Player name: {self.name}, Current_room: {self.current_room}, Items: {self.items}'
@@ -24,10 +24,10 @@ class Player:
             if self.current_room.w_to is not None:
                 self.current_room = self.current_room.w_to
         elif action == 'i':
-            user_inventory.show_inventory()
+            self.inventory.show_inventory()
             
 
-class Inventory(Player):
+class Inventory:
     def __init__(self, items):
         self.items = items
     
@@ -45,9 +45,9 @@ user = Player('Jim', 'Foyer',  items={'candle': 'it lights up stuff', 'sword': '
 # print(user.items)
 
 # print(user)
-user_inventory = Inventory(user.items)
 
-print(user_inventory.show_inventory())
+
+print(user.inventory.show_inventory())
 
 
 
