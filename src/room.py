@@ -6,7 +6,7 @@ class Room:
         self.name = name
         self.description = description
         if items is None:
-            self.items= {}
+            self.items = {}
         else:
             self.items = items
         self.n_to = n_to
